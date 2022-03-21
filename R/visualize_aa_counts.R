@@ -1,6 +1,6 @@
 #' @importFrom magrittr %>%
 
-name_me1 <- function(aa_code){
+visualize_aa_counts <- function(aa_code){
   unique_aas <- aa_code %>% 
     stringr::str_split(
       pattern = stringr::boundary("character"), 

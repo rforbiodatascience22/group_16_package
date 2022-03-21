@@ -10,8 +10,8 @@
 
 generate_dna <- function(dna_length){
   dna_samp_rand <- sample(c("A", "T", "G", "C"), 
-                     size = dna_length, 
-                     replace = TRUE)
+                          size = dna_length, 
+                          replace = TRUE)
   dna_seq <- paste0(dna_samp_rand, collapse = "")
   return(dna_seq)
 }

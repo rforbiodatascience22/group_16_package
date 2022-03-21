@@ -1,4 +1,4 @@
-name_me1 <- function(mRNA, start = 1){
+make_codons <- function(mRNA, start = 1){
   mrna_seq <- nchar(mRNA)
   codons <- substring(mrna_seq,
                       first = seq(from = start, to = seq_length-3+1, by = 3),
