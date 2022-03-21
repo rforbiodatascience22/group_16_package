@@ -13,4 +13,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Depends: 
     R (>= 2.10)
+    usethis::use_package("magrittr")
+    usethis::use_package("stringr")
+    usethis::use_package("ggplot2")
 LazyData: true
