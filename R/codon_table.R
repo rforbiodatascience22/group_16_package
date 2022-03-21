@@ -14,6 +14,7 @@ codon_table <- c("UUU" = "F", "UCU" = "S", "UAU" = "Y", "UGU" = "C",
                  "GUC" = "V", "GCC" = "A", "GAC" = "D", "GGC" = "G",
                  "GUA" = "V", "GCA" = "A", "GAA" = "E", "GGA" = "G",
                  "GUG" = "V", "GCG" = "A", "GAG" = "E", "GGG" = "G")
+
 usethis::use_data(codon_table, overwrite = TRUE)
 usethis::use_r("data")
-rstudioapi::documentSaveAll()
+
