@@ -5,7 +5,7 @@
 \alias{codon_table}
 \title{The Standard Code}
 \format{
-
+An object of class \code{character} of length 64.
 }
 \source{
 \url{https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi?chapter=tgencodes#SG1}

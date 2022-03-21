@@ -2,18 +2,21 @@ Package: CentralDogma
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person("Line", "Sandvad", , "first.last@example.com", role = c("aut", "cre"),
+    c(person("Line", "Sandvad", , "first.last@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID")),
-    person("Tram", "Nguyen", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Tram", "Nguyen", , "first.last@example.com", role = c("aut"),
+           comment = c(ORCID = "YOUR-ORCID-ID")))
 Description: Replicate central dogma of molecular biology. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Depends: 
-    R (>= 2.10)
-    usethis::use_package("magrittr")
-    usethis::use_package("stringr")
-    usethis::use_package("ggplot2")
+    R (>= 2.10),
+    magrittr,
+    stringr,
+    ggplot2
 LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
