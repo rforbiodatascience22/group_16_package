@@ -8,17 +8,23 @@
 #name_me3 = dna_samp_rand 
 #name_me4 = dna_seq
 
-#' Title
+#' Generation of randomly sampled DNA sequence of a certain length
 #'
 #' @param dna_length
-#' 
-#' 
+#' The length of the DNA sequence you want to generate.
+#' Enter as double or character. 
 #' 
 #'
 #' @return 
+#' Randomly generated DNA sequence of length ´dna_length´ as character 
+#' 
 #' @export
 #'
 #' @examples
+#' 
+#' generate_dna(12)
+#' 
+#' generate_dna("21")
 
 generate_dna <- function(dna_length){
   dna_samp_rand <- sample(c("A", "T", "G", "C"), 
