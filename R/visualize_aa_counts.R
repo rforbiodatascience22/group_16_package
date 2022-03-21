@@ -21,3 +21,4 @@ visualize_aa_counts <- function(aa_code){
   
   return(count_aas)
 }
+
