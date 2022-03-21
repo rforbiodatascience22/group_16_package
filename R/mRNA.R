@@ -1,3 +1,4 @@
+
 #' Convert DNA sequence into mRNA sequence
 #'
 #' @param dna_seq 

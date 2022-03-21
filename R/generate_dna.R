@@ -33,3 +33,4 @@ generate_dna <- function(dna_length){
   dna_seq <- paste0(dna_samp_rand, collapse = "")
   return(dna_seq)
 }
+
