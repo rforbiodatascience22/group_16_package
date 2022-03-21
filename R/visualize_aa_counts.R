@@ -8,11 +8,11 @@ visualize_aa_counts <- function(aa_code){
     as.character() %>%
     unique()
   
-  counts <- sapply(unique_aas, function(name_me4) stringr::str_count(string = aa_code, pattern =  name_me4)) %>% 
+  counts <- sapply(unique_aas, function(boundary) stringr::str_count(string = aa_code, pattern = boundary)) %>% 
     as.data.frame()
   
   colnames(counts) <- c("Counts")
-  counts[["Amino acid"]] <- rownames(counts)
+  counts[["Amino_acid"]] <- rownames(counts)
   
   count_aas <- counts %>% 
     ggplot2::ggplot(ggplot2::aes(x = Amino_acid, y = Counts, fill = Amino_acid)) +
