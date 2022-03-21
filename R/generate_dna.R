@@ -8,6 +8,18 @@
 #name_me3 = dna_samp_rand 
 #name_me4 = dna_seq
 
+#' Title
+#'
+#' @param dna_length
+#' 
+#' 
+#' 
+#'
+#' @return 
+#' @export
+#'
+#' @examples
+
 generate_dna <- function(dna_length){
   dna_samp_rand <- sample(c("A", "T", "G", "C"), 
                           size = dna_length, 
