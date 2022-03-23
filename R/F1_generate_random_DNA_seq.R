@@ -1,13 +1,11 @@
-#function takes in a given length (double)
-#generates a random sample of bases in dna
-#and pastes them together into one string,
-#which is thus a randomly generated dna sequence
-
-#name_me1 = generate_dna
-#name_me2 = dna_length
-#name_me3 = dna_samp_rand 
-#name_me4 = dna_seq
-
+#' Generate random DNA sequence
+#'
+#' @param dna_length user specified input of DNA sequence, integer
+#'
+#' @return a randomly generated DNA sequence consisting of the bases A, T, C and G. Returned as a string
+#' @export
+#'
+#' @examples
 generate_dna <- function(dna_length){
   dna_samp_rand <- sample(c("A", "T", "G", "C"), 
                           size = dna_length, 

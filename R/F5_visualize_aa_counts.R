@@ -1,5 +1,13 @@
+#' Visualize the composition of amino acids in a given amino acid sequence
+#'
+#' @param aa_code a string where each letter denotes an amino acid
+#'
+#' @return a ggplot2 bar plot visualization of the counts of occurences of each amino acid in the input sequence
+#' @export
+#'
+#' @examples
+#'
 #' @importFrom magrittr %>%
-
 visualize_aa_counts <- function(aa_code){
   unique_aas <- aa_code %>% 
     stringr::str_split(
