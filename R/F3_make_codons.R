@@ -1,13 +1,10 @@
-#' Title
+#' Dividing an mRNA string into 3mers (codons)
 #'
-#' @param mRNA
-#' @param start
+#' @param mRNA a string of the letters A, U, C and G
+#' @param start the translational starting point. This will be the first letter of the first codon returned. Default is 1
 #'
-#' @return
+#' @return a vector of strings, each string having length 3.
 #' @export
-#'
-#' @examples
-
 make_codons <- function(mRNA_seq, start = 1){
   seq_length <- nchar(mRNA_seq)
   codons <- substring(mRNA_seq,
