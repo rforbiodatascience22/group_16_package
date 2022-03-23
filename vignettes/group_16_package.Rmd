@@ -42,3 +42,5 @@ The function takes a protein sequence (amino acid sequence) as input and return 
 
 
 
+
+
