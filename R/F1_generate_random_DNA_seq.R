@@ -4,8 +4,6 @@
 #'
 #' @return a randomly generated DNA sequence consisting of the bases A, T, C and G. Returned as a string
 #' @export
-#'
-#' @examples
 generate_dna <- function(dna_length){
   dna_samp_rand <- sample(c("A", "T", "G", "C"), 
                           size = dna_length, 

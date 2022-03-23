@@ -5,9 +5,6 @@
 #'
 #' @return a vector of strings, each string having length 3.
 #' @export
-#'
-#' @examples
-
 make_codons <- function(mRNA_seq, start = 1){
   seq_length <- nchar(mRNA_seq)
   codons <- substring(mRNA_seq,
