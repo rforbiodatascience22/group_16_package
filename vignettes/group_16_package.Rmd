@@ -1,0 +1,44 @@
+---
+title: "group_16_package"
+output: rmarkdown::pdf_document
+vignette: >
+  %\VignetteIndexEntry{group_16_package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(CentralDogma)
+```
+## Description
+This packages consists of five functions which together generates a random DNA sequence, transcribe it to mRNA, translate it to protein and finally visualize the occurrence of each aminoacid in the sequence. 
+
+## Userguide of each function
+The functions can be used as stand alone functions with the correct input. The functions can also be used together to generate DNA sequences and translating them into proteins.
+
+### generate_dna
+This function takes the wanted length of the DNA sequence as input, and generate a random DNA sequence with that length as output. 
+
+### mRNA
+Takes a DNA sequence as input, change each T to an U, and return the DNA sequence with the changes. 
+
+### make_codons
+Takes an mRNA sequence as input, and the start position for translation, default start is 1. The function then split the mRNA sequence into codons of 3 nucleotides, as output. 
+
+### translation
+Triplets of 3 nucleotides (codons) are given as input, each codon is translated using the codon table to the correct aminoacid, and the amino acid sequence is returned. 
+
+### visualize_aa_counts
+The function takes a protein sequence (amino acid sequence) as input and return a plot showing the counts of each of the aminoacid in the input sequence.
+
+
+
+
+
