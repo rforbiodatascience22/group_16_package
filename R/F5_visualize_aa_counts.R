@@ -26,7 +26,7 @@ visualize_aa_counts <- function(aa_code){
                                  y = Counts,             # y values is the counts for each unique amino acid.
                                  fill = Amino_acid)) +   # fill is used to give each bar a separate color for each amino acid.
     ggplot2::geom_col() +                                # geom_col is used to make the bar plot as we want the height of the bars to represent values in the data.
-    ggplot2::theme_bw()                                  # theme for nicer look
+    ggplot2::theme_bw()                                  # theme for nicer look.
   
   return(count_aas)
 }
