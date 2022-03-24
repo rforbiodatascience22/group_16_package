@@ -1,5 +1,5 @@
 ---
-title: "group_16_package"
+title: "Group 16 - Central Dogma Package Vignette"
 output: rmarkdown::pdf_document
 vignette: >
   %\VignetteIndexEntry{group_16_package}
@@ -17,27 +17,83 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(CentralDogma)
 ```
+
 ## Description
 This packages consists of five functions which together generates a random DNA sequence, transcribe it to mRNA, translate it to protein and finally visualize the occurrence of each aminoacid in the sequence. 
 
 ## Userguide of each function
 The functions can be used as stand alone functions with the correct input. The functions can also be used together to generate DNA sequences and translating them into proteins.
 
-### generate_dna
-This function takes the wanted length of the DNA sequence as input, and generate a random DNA sequence with that length as output. 
+### generate_dna()
+This function takes an integer (the wanted length of the DNA sequence) as input, and generates a random string of A, T, C and G (DNA sequence) with that length as output. 
 
-### mRNA
-Takes a DNA sequence as input, change each T to an U, and return the DNA sequence with the changes. 
+Example:
+```{r}
+sample_DNA <- generate_dna(15)
+sample_DNA
+```
 
-### make_codons
-Takes an mRNA sequence as input, and the start position for translation, default start is 1. The function then split the mRNA sequence into codons of 3 nucleotides, as output. 
 
-### translation
-Triplets of 3 nucleotides (codons) are given as input, each codon is translated using the codon table to the correct aminoacid, and the amino acid sequence is returned. 
+### mRNA()
+Takes a string (DNA sequence) as input, change each T to an U, and return the DNA sequence with the changes. 
+
+Example:
+```{r}
+sample_mRNA <- mRNA(sample_DNA)
+sample_mRNA
+```
+
+
+### make_codons()
+Takes a string (mRNA sequence) as input, and the start position for translation, default start is 1. The function then split the mRNA sequence into a vector of strings (codons of 3 nucleotides) as output. 
+
+Example:
+```{r}
+sample_codons <- make_codons(sample_mRNA, start = 1)
+sample_codons
+```
+
+
+### translation()
+A vector of strings symbolizing triplets of 3 nucleotides (codons) are given as input, each codon is translated using the codon table to the correct amino acid, and the amino acid sequence is returned as a string where each letter represents an amino acid. 
+
+Example:
+```{r}
+sample_peptide <- translation(sample_codons)
+sample_peptide
+```
+
 
 ### visualize_aa_counts
-The function takes a protein sequence (amino acid sequence) as input and return a plot showing the counts of each of the aminoacid in the input sequence.
+The function takes a string (sequence of single letter amino acids) as input and returns a plot showing the counts of each of the amino acid in the input sequence.
 
+Example:
+```{r}
+visualize_aa_counts(sample_peptide)
+```
+
+
+## Combined workflow
+The functions can be strung together with pipes to make a complete workflow:
+
+```{r}
+DNA_length <- 60
+
+generate_DNA(DNA_length) %>% 
+  mRNA() %>% 
+  make_codons() %>% 
+  translation %>% 
+  visualize_aa_counts()
+  
+```
+
+## Usage cases of the package
+The first function of the package, generate_DNA(), can be considered a helper function which is used to generate a random DNA sample to illustrate the functions of the other 4 functions. The idea is that you can take a DNA sequence (or mRNA sequence if that is your starting point) and generate the amino acid sequence it would result is. That is, you want to use it with coding sequences where the introns have already been removed.
+Getting the amino acid sequence can then be used to investigate the function of the protein product of the given DNA/mRNA sequence by looking at conserved regions through alignment to online databases.
+
+## Further additions to the package
+An obvious addition would be a function to search for potential translational start sites (ATG/AUG) in the sequence and the length of the protein they would result in. This could assist in establishing the most likely reading frame.
+Another potential funtion, albeit harder to implement, would be one which helps find likely intron/exon structures in a raw DNA sequence. Even a fairly simple implementation would likely have to compare the sequence against a database to find conserved regions, as exons an be expected to be more conserved (except in the case where a promoter region is found in an intron etc.)
 
 
 
