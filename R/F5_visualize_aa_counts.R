@@ -14,8 +14,8 @@ visualize_aa_counts <- function(aa_code){
     unique()                                                      # returns each unique value only once.
   
   counts <- sapply(unique_aas,                                                           # We want to get a vector containing the counts for each unique aa:
-                   function(boundary = "") stringr::str_count(string = aa_code,          # applies the str_count function to the unique_aas, getting
-                                                              pattern = boundary)) %>%   # the counts from the original input vector aa_code.
+                   function(amino_acid) stringr::str_count(string = aa_code,          # applies the str_count function to the unique_aas, getting
+                                                              pattern = amino_acid)) %>%   # the counts from the original input vector aa_code.
     as.data.frame()                                                                      # converts output from two vectors into a single data frame
   
   colnames(counts) <- c("Counts")             # names the column which contains the counts "Counts"

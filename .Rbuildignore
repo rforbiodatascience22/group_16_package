@@ -7,3 +7,5 @@
 ^CentralDogma\.Rcheck$
 ^CentralDogma.*\.tar\.gz$
 ^CentralDogma.*\.tgz$
+^doc$
+^Meta$

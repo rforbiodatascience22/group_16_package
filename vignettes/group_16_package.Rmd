@@ -1,5 +1,6 @@
 ---
-title: "Group 16 - Central Dogma Package Vignette"
+title: "Central Dogma Package Vignette"
+author: "Group 16: s164528, s184339, s206220, s216535, s212934"
 output: rmarkdown::pdf_document
 vignette: >
   %\VignetteIndexEntry{group_16_package}
@@ -21,9 +22,6 @@ library(CentralDogma)
 ## Description
 This packages consists of five functions which together generates a random DNA sequence, transcribe it to mRNA, translate it to protein and finally visualize the occurrence of each aminoacid in the sequence. 
 
-## Userguide of each function
-The functions can be used as stand alone functions with the correct input. The functions can also be used together to generate DNA sequences and translating them into proteins.
-
 ### generate_dna()
 This function takes an integer (the wanted length of the DNA sequence) as input, and generates a random string of A, T, C and G (DNA sequence) with that length as output. 
 
@@ -32,7 +30,6 @@ Example:
 sample_DNA <- generate_dna(15)
 sample_DNA
 ```
-
 
 ### mRNA()
 Takes a string (DNA sequence) as input, change each T to an U, and return the DNA sequence with the changes. 
@@ -43,7 +40,6 @@ sample_mRNA <- mRNA(sample_DNA)
 sample_mRNA
 ```
 
-
 ### make_codons()
 Takes a string (mRNA sequence) as input, and the start position for translation, default start is 1. The function then split the mRNA sequence into a vector of strings (codons of 3 nucleotides) as output. 
 
@@ -52,7 +48,6 @@ Example:
 sample_codons <- make_codons(sample_mRNA, start = 1)
 sample_codons
 ```
-
 
 ### translation()
 A vector of strings symbolizing triplets of 3 nucleotides (codons) are given as input, each codon is translated using the codon table to the correct amino acid, and the amino acid sequence is returned as a string where each letter represents an amino acid. 
@@ -63,7 +58,6 @@ sample_peptide <- translation(sample_codons)
 sample_peptide
 ```
 
-
 ### visualize_aa_counts
 The function takes a string (sequence of single letter amino acids) as input and returns a plot showing the counts of each of the amino acid in the input sequence.
 
@@ -72,11 +66,10 @@ Example:
 visualize_aa_counts(sample_peptide)
 ```
 
-
 ## Combined workflow
 The functions can be strung together with pipes to make a complete workflow:
 
-```{r}
+```{r eval=FALSE}
 DNA_length <- 60
 
 generate_dna(DNA_length) %>% 
