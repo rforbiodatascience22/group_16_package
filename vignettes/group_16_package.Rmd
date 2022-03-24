@@ -27,7 +27,7 @@ This function takes an integer (the wanted length of the DNA sequence) as input,
 
 Example:
 ```{r}
-sample_DNA <- generate_dna(15)
+sample_DNA <- generate_dna(60)
 sample_DNA
 ```
 
