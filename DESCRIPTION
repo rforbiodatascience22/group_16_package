@@ -4,8 +4,11 @@ Version: 0.0.0.9000
 Authors@R: 
     c(person("Line", "Sandvad", , "first.last@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID")),
-    person("Tram", "Nguyen", , "first.last@example.com", role = c("aut"),
-           comment = c(ORCID = "YOUR-ORCID-ID")))
+           person("Tram", "Nguyen", , "first.last@example.com", role = c("aut"),
+           comment = c(ORCID = "YOUR-ORCID-ID")),
+           person("Casper", "Rasmussen", "first.last@example.com", role = c("aut"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+      )
 Description: Replicate central dogma of molecular biology. 
 License: MIT + file LICENSE
 Encoding: UTF-8

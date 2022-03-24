@@ -79,7 +79,7 @@ The functions can be strung together with pipes to make a complete workflow:
 ```{r}
 DNA_length <- 60
 
-generate_DNA(DNA_length) %>% 
+generate_dna(DNA_length) %>% 
   mRNA() %>% 
   make_codons() %>% 
   translation %>% 
